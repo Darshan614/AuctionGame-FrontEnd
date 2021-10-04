@@ -1,0 +1,55 @@
+.playername{
+    color: white;
+    font-weight: bold;
+    font-size: 155%;
+    text-align: left;
+    margin-bottom: 2%;
+}
+.playercost{
+    color: white;
+    font-weight: bold;
+    font-size: 155%;
+    text-align: right;
+    margin-bottom: 2%;
+}
+
+.player{
+    background-color: black;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+.heading{
+    color: white;
+    text-align: center;
+    margin-bottom: 4%;
+    font-size: 125%;
+}
+
+@media screen and (max-width: 480px) {
+    .playername{
+        font-size: 40%;
+    }
+    .playercost{
+        font-size: 40%;
+        text-align: right;
+    }
+    .player{
+        border-radius: 5px;
+    }
+}
+
+
+
+@media screen and (max-width: 980px) and (min-width: 479px) {
+    .playername{
+        font-size: 100%;
+    }
+    .playercost{
+        font-size: 100%;
+        text-align: right;
+    }
+    .player{
+        border-radius: 5px;
+    }
+  }

@@ -1,0 +1,12 @@
+.board{
+    color: white;
+    background-color: rgb(2, 2, 83);
+    margin-top: 6%;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .board{
+        border-radius: 5px;
+    }
+}

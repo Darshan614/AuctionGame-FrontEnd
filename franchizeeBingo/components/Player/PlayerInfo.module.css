@@ -1,0 +1,63 @@
+.name{
+    font-size: 5rem;
+}
+
+.country{
+    font-size:2rem;
+}
+
+.points{
+    font-size:2rem;
+}
+
+.baseprice{
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .name{
+      font-size: 1rem;
+    }
+    .country{
+        font-size:1rem;
+    }
+    .points{
+        font-size:1rem;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 535px) {
+    .name{
+        font-size: 1.5rem;
+      }
+      .country{
+          font-size:1rem;
+      }
+      .points{
+          font-size:1rem;
+      }
+}
+
+@media screen and (min-width: 536px) and (max-width: 992px) {
+    .name{
+        font-size: 2rem;
+      }
+      .country{
+          font-size:1rem;
+      }
+      .points{
+          font-size:1rem;
+      }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .name{
+        font-size: 3rem;
+      }
+      .country{
+          font-size:1rem;
+      }
+      .points{
+          font-size:1rem;
+      }
+}

@@ -1,0 +1,9 @@
+.currentbid{
+    background-color: rgb(2, 58, 2);
+    margin-top: 6%;
+    padding: 2%;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}

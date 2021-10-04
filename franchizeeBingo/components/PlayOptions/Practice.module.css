@@ -1,0 +1,13 @@
+.play{
+    padding: 20%;
+    text-align: center;
+    font: 2em sans-serif;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+    color: white;
+    cursor: grab;
+}
+
+.play:hover{
+  background: linear-gradient(90deg, #c53a3a 0%, #e427a5 100%);
+}
