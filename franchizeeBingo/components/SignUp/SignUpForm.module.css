@@ -1,0 +1,24 @@
+.signup{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    
+}
+
+.box{
+    background-color: black;
+    padding: 2%;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+
+.title{
+    text-align: center;
+    margin-top: 5%;
+    color: rgb(228, 89, 205);
+}
+
+.submit{
+    margin-left: 250px;;
+}

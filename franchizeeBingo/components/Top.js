@@ -25,9 +25,9 @@ function Top(){
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">Login</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        SIgnUp
+      <Nav.Link href="/Login">Login</Nav.Link>
+      <Nav.Link eventKey={2} href="/SignUp">
+        SignUp
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>

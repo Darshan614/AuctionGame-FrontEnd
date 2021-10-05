@@ -1,5 +1,5 @@
 .play{
-    background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+    background: linear-gradient(90deg, #01010c 0%, #00ff88 100%);
     padding-top: 5%;
     padding-bottom: 5%;
     padding-right: 10%; 
@@ -14,13 +14,13 @@
 }
 
 .link{
-    background: linear-gradient(90deg, #ec5dd5 0%, #e9a456 100%);
+    background: linear-gradient(90deg, #080007 0%, #0a0600 100%);
     padding-top: 5%;
     padding-bottom: 5%;
     padding-right: 10%; 
     padding-left: 10%;
     margin-top: 5%;
-    color: #0700b8;
+    color: #eaeaf1;
     text-align: center;
     font: 20px sans-serif;
     border-radius: 5px;
