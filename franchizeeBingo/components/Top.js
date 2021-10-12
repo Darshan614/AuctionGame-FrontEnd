@@ -4,7 +4,21 @@ import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
 
+
 function Top(){
+  let currentuser;
+  if(typeof(window)!=="undefined"){
+    console.log("inside ifff");
+    currentuser = localStorage.getItem('user');
+  }
+    const logout = () => {
+      localStorage.removeItem("user");
+      window.location.reload();
+      console.log("deleted");
+    }
+
+    
+    console.log("Curren tsuer is",currentuser);
     return(
         <Fragment>
         
@@ -25,10 +39,11 @@ function Top(){
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="/Login">Login</Nav.Link>
+      {currentuser ? (<Nav.Link onClick={logout}>Logout</Nav.Link>):
+      (<Fragment><Nav.Link href="/Login">Login</Nav.Link>
       <Nav.Link eventKey={2} href="/SignUp">
         SignUp
-      </Nav.Link>
+      </Nav.Link></Fragment>)}
     </Nav>
   </Navbar.Collapse>
   </Container>

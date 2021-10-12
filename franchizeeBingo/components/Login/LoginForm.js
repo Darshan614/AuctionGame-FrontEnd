@@ -6,8 +6,10 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
 import classes from './LoginForm.module.css';
  
-function LoginForm() {
+function LoginForm(props) {
   const [validated, setValidated] = useState(false);
+  const [username,setUsername] = useState();
+  const [password,setPassword] = useState();
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -17,11 +19,10 @@ function LoginForm() {
     }
 
     setValidated(true);
+    event.preventDefault();
+    props.onLogin(username,password);
   };
 
-  const onsubmit = ()=>{
-    
-  }
 
   return (
       <div className={classes.signup}>
@@ -35,11 +36,13 @@ function LoginForm() {
             <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
             <Form.Control
               type="text"
+              value={username}
               placeholder="Username"
               aria-describedby="inputGroupPrepend"
+              onChange={(e)=>setUsername(e.target.value)}
               required
             />
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback type="invalid" >
               Please choose a username.
             </Form.Control.Feedback>
           </InputGroup>
@@ -50,8 +53,10 @@ function LoginForm() {
           <InputGroup hasValidation>
             <Form.Control
               type="password"
+              value={password}
               placeholder="Password"
               aria-describedby="inputGroupPrepend"
+              onChange={(e)=>setPassword(e.target.value)}
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -63,7 +68,7 @@ function LoginForm() {
       
 
       <div>--------------------------------------------------------</div>
-      <Button type="submit" className={classes.submit} onSubmit={onsubmit}>Login</Button>
+      <Button type="submit" className={classes.submit}>Login</Button>
     </Form>
     </div>
     </div>

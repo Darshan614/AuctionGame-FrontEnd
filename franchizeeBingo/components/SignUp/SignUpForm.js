@@ -92,7 +92,7 @@ function FormExample(props) {
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
-        <Form.Group as={Col}  controlId="validationCustomUsername">
+        <Form.Group as={Col}  controlId="validationCustomPassword">
           <Form.Label>Password</Form.Label>
           <InputGroup hasValidation>
             <Form.Control
