@@ -24,7 +24,6 @@ const onLogin = (username,password)=>{
             }
         })
         .then((data)=>{
-            console.log("data from signin",data);
             if(data.message==="Username not found" || data.message==="Invalid Password!")
             {
                 alert(data.message);
@@ -33,6 +32,7 @@ const onLogin = (username,password)=>{
             else
             {
                 if(data.accessToken){
+                    console.log('login data',data)
                     localStorage.setItem("user",JSON.stringify(data));
                 }
 

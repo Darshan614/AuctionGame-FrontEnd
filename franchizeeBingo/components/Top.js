@@ -24,7 +24,7 @@ function Top(){
         
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='classes.nav'>
   <Container>
-  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar.Brand href="#home">FranchizeeBingo</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">

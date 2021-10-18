@@ -1,0 +1,24 @@
+.box{
+    background-color: white;
+    margin-top: 5%;
+    border-radius: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 2%; 
+    padding-left: 2%;
+    background: linear-gradient(90deg, #d5f03c 0%, #1fe93a 100%);
+    text-align: center;
+}
+
+.msg{
+    background: linear-gradient(90deg, #01010c 0%, #00ff88 100%);
+    background-color: white;
+    margin-top: 5%;
+    border-radius: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 2%; 
+    padding-left: 2%;
+    text-align: center;
+    color:white;
+}
