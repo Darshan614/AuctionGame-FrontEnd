@@ -3,6 +3,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserMinus } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 function Top(){
@@ -24,7 +27,7 @@ function Top(){
         
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='classes.nav'>
   <Container>
-  <Navbar.Brand href="#home">FranchizeeBingo</Navbar.Brand>
+  <Navbar.Brand href="#">FranchizeeBingo</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -39,8 +42,8 @@ function Top(){
       </NavDropdown>
     </Nav>
     <Nav>
-      {currentuser ? (<Nav.Link onClick={logout}>Logout</Nav.Link>):
-      (<Fragment><Nav.Link href="/Login">Login</Nav.Link>
+      {currentuser ? (<Nav.Link onClick={logout}><FontAwesomeIcon icon={faUserMinus} color="white"/> Logout</Nav.Link>):
+      (<Fragment><Nav.Link href="/Login"> Login</Nav.Link>
       <Nav.Link eventKey={2} href="/SignUp">
         SignUp
       </Nav.Link></Fragment>)}

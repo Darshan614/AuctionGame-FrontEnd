@@ -5,13 +5,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Link from 'next/link';
 
-function PlayButton(){
+function PlayButton(props){
+    const startgame = () => {
+        props.onplay(props.gamelink);
+    }
+
     return (<Fragment>
         <Container>
             <Row>
                 <Col xs={3}></Col>
             <Col xs={6}>
-                <Link href='/GameArea'><div className={classes.playbutton} >Start the Game</div></Link>
+                <div onClick={startgame} className={classes.playbutton} >Start the Game</div>
             </Col>
             </Row>
         </Container>

@@ -1,0 +1,55 @@
+.heading{
+    color:white;
+    font: 2em sans-serif;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.list{
+    list-style-type: none;
+}
+
+.res{
+    align-content: center;
+}
+
+.itemlist{
+    text-align: center;
+    margin-left: 5%;
+    margin-right:5%;
+    background: linear-gradient(90deg, #3cc6f0 0%, #e224a9 100%);
+    list-style-type: none;
+    margin-bottom: 2%;
+}
+
+.ic{
+    color:yellow;
+    font-size: 50px;
+}
+
+.name{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    margin-right: 2%;
+}
+
+.points{
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.money{
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2%;
+}
+
+.winner{
+    text-align: center;
+    background: linear-gradient(90deg, #df0606 0%, #eff311 100%);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

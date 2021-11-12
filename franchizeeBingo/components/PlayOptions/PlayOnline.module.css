@@ -12,3 +12,8 @@
 .play:hover{
   background: linear-gradient(90deg, #c53a3a 0%, #e427a5 100%);
 }
+
+.ic{
+  font-size: 1em;
+  color: white
+}

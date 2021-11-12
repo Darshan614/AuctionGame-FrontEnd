@@ -1,8 +1,10 @@
 import classes from './PlayerImage.module.css';
 
-function PlayerImage(){
+function PlayerImage(props){
+    const image = "/" + props.player.playername + '.png';
+    console.log(image,'image');
     return(
-        <div className={classes.playerimage}><img className={classes.player} src='/MSDHONI.jpg'></img></div>
+        <div className={classes.playerimage}><img className={classes.player} src={image}></img></div>
     )
 }
 

@@ -1,4 +1,4 @@
-import GameArea from '../components/GameArea/GameArea';
+// import Rules from '../components/GameArea/GameArea';
 import Links from '../components/CreateGame/Links';
 import LinkDisplay from '../components/CreateGame/LinkDisplay';
 import { Fragment } from 'react';
@@ -7,8 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import PlayersList from '../components/CreateGame/PlayerList';
 import PlayButton from '../components/CreateGame/PlayButton';
+import Router from 'next/router';
 // import openSocket from 'socket.io-client';
-import * as io from 'socket.io-client'
+import * as io from 'socket.io-client';
 
 function OnlineMode() {
     const [showLink,setshowLink] = useState();
@@ -20,7 +21,8 @@ function OnlineMode() {
      
     const createGameAPI = ()=>{
         console.log("Start creating game");
-        console.log(localStorage.getItem('user'))
+        console.log(localStorage.getItem('user'));
+        localStorage.setItem('gameOwner',true);
         const uID = JSON.parse(localStorage.getItem('user')).id;
         console.log("userID",uID);
         let pin = {
@@ -42,6 +44,7 @@ function OnlineMode() {
             setshowgame();
             setLink(data.gameID);
             localStorage.setItem('gameID',data.gameID);
+            //localStorage.setItem('gameOwner',)
             setshowPlayButton(true);
             setshowList(true);
             const socket = io.connect('http://localhost:8080');
@@ -59,6 +62,13 @@ function OnlineMode() {
                     setshowgame(false);
                 }
             })
+            socket.on('rules',data=>{
+                if(data.action=="show rules")
+                {
+                    Router.push('/Rules');
+                    console.log("show rules");
+                }
+            })
             setplayerlist([{name:data.owner}]);
         })
         .catch((err)=>{
@@ -69,6 +79,8 @@ function OnlineMode() {
 
     const joinLinkAPI = (link) => {
         console.log("Start joining game with link",link);
+        localStorage.setItem('gameID',link);
+        localStorage.setItem('gameOwner',false);
         console.log(localStorage.getItem('user'))
         const uID = JSON.parse(localStorage.getItem('user')).id;
         const uName = JSON.parse(localStorage.getItem('user')).username;
@@ -89,7 +101,6 @@ function OnlineMode() {
         })
         .then((data)=>{
             console.log('data',data);
-            
         })
         .catch((err)=>{
             console.log(err);
@@ -109,7 +120,36 @@ function OnlineMode() {
                     setshowgame(false);
                 }
             })
+            socket.on('rules',data=>{
+                if(data.action=="show rules")
+                {
+                    Router.push('/Rules');
+                    console.log("show rules");
+                }
+            })
     }
+
+    const onplay = (gamelink) => {
+        const pin = {
+            gameId : gamelink
+        }
+
+        fetch("http://localhost:8080/rules",{
+            method:'post',
+            body: JSON.stringify(pin),
+            headers: { "Content-Type": "application/json" }
+        })
+        .then((res)=>{
+            console.log('res',res);
+            return res.json();
+        })
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch(err => console.log(err))
+    }
+
+    
 
     return (
         <Fragment>
@@ -117,7 +157,7 @@ function OnlineMode() {
             {!showplaybutton && showGame && <Links createGameAPI={createGameAPI} joinLinkAPI={joinLinkAPI} />}
             {showLink && <LinkDisplay link={link}></LinkDisplay>}
             {showList && <PlayersList PlayerList={playerlist}></PlayersList>}
-            {showplaybutton && <PlayButton ></PlayButton>}
+            {showplaybutton && <PlayButton onplay={onplay} gamelink={link}></PlayButton>}
         </Fragment>
     )
 }

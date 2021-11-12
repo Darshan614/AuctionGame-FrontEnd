@@ -1,9 +1,9 @@
 import classes from './NextBid.module.css';
 
-function NextBid(){
+function NextBid(props){
     return(
         <div className={classes.nextbid}>
-            <div>Next Bid: 80</div>
+            <div>Next Bid: {props.nextbid}</div>
         </div>
     )
 }

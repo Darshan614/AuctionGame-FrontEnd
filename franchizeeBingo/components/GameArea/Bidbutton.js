@@ -1,8 +1,11 @@
 import classes from "./Bidbutton.module.css";
 
-function Bidbutton(){
+function Bidbutton(props){
     return(
-        <button className={classes.bidbutton}>Bid</button>
+        <div>
+            
+        {props.moneyleft >= props.nextbid && <button className={classes.bidbutton} onClick={props.onbid}>Bid</button>}
+        </div>
     )
 }
 

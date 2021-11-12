@@ -10,20 +10,20 @@ import CurrentBid from './CurrentBid';
 import NextBid from './NextBid';
 import Bidbutton from './Bidbutton';
  
-function PlayerBoard() {
+function PlayerBoard(props) {
     return (<Fragment>
         <div>
-        <TimeBar />
+        <TimeBar fresh={props.fresh} finalbid={props.finalbid} />
             <Container className={classes.board}>
                 <Row >
-                    <Col xs={7}><PlayerInfo /></Col>
-                    <Col xs={5}><PlayerImage /></Col>
+                    {/* <Col xs={7}><PlayerInfo player={props.player}/></Col> */}
+                    <Col><PlayerImage player={props.player}/></Col>
                 </Row>
             </Container>
                 <Row >
-                    <Col xs={12} md={5}><CurrentBid /></Col>
-                    <Col xs={8} md={4}><NextBid /></Col>
-                    <Col xs={4} md={3}><Bidbutton /></Col>
+                    <Col xs={12} md={5}><CurrentBid currbid={props.currbid} bidder={props.bidder}/></Col>
+                    <Col xs={8} md={4}><NextBid nextbid={props.nextbid}/></Col>
+                    <Col xs={4} md={3}><Bidbutton nextbid={props.nextbid} moneyleft={props.moneyleft} onbid={props.onbid}/></Col>
                 </Row>
         
         </div>

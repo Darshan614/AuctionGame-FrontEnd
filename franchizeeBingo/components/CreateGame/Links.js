@@ -3,6 +3,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import classes from "./JoinLink.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Links(props) {
     const [showjoinLink,setshowjoinLink] = useState(true);
@@ -29,7 +32,7 @@ function Links(props) {
                 <Col xs={3}></Col>
                 <Col xs={6}>
                     <div  className={classes.play} onClick={()=>setShow(!showLinkBar)}>
-                        Join through link
+                    <FontAwesomeIcon icon={faLink} color="orange"/> Join through link
                     </div>
                     {showLinkBar && <form className={classes.form} >
                         <input className={classes.link} type="text" placeholder="Enter Link" onChange={changelink}>
@@ -42,7 +45,7 @@ function Links(props) {
                 <Col xs={3}></Col>
                 <Col xs={6}>
                     <div  className={classes.play} onClick={createGame}>
-                        Create Game
+                    Create Game <FontAwesomeIcon icon={faPlus} color="orange"/> 
                     </div>
                 </Col>
             </Row>} 
